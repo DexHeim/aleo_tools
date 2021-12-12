@@ -59,7 +59,7 @@ leaderboard() {
 }
 
 # Actions
-sudo apt install wget, jq, curl -y &>/dev/null
+#sudo apt install wget, jq, curl -y &>/dev/null
 . <(wget -qO- https://raw.githubusercontent.com/DexHeim/tools/main/logo.sh)
 cd
 $function
