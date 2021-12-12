@@ -52,10 +52,10 @@ leaderboard() {
   local block_heigh=$(echo $leaderboard_web | jq ".blockHeight")
   
   printf_n "
-Позиция в рейтинге:${C_LGn}${position}${RES} из ${C_LGn}${cnt_users}${RES}"
-Блоков добыто:${C_LGn}${cnt_blocks_mined}${RES}"
-Последний добытый блок:${C_LGn}${last_block_mined}${RES}"
-Счет/Калибрационный счет:${C_LGn}${score}${RES} / ${C_LGn}${calibration_score}${RES}"
+Позиция в рейтинге:${C_LGn}${position}${RES} из ${C_LGn}${cnt_users}${RES}
+Блоков добыто:${C_LGn}${cnt_blocks_mined}${RES}
+Последний добытый блок:${C_LGn}${last_block_mined}${RES}
+Счет/Калибрационный счет:${C_LGn}${score}${RES} / ${C_LGn}${calibration_score}${RES}
 Высота сети:${C_LGn}${block_heigh}${RES}
 "
 }
