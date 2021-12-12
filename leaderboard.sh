@@ -51,11 +51,11 @@ leaderboard() {
   local calibration_score=$(echo $leaderboard_web | jq ".leaderboard[0].calibrationScore")
   local block_heigh=$(echo $leaderboard_web | jq ".blockHeight")
   
-  echo "Позиция в рейтинге:${C_LGn}$position{RES} из ${C_LGn}$cnt_users{RES}"
-  echo "Блоков добыто:${C_LGn}$cnt_blocks_mined{RES}"
-  echo "Последний добытый блок:${C_LGn}$last_block_mined{RES}"
-  echo "Счет/Калибрационный счет:${C_LGn}$score{RES} / ${C_LGn}$calibration_score{RES}"
-  echo "Высота сети:${C_LGn}$block_heigh{RES}"
+  echo "Позиция в рейтинге:${C_LGn}$position${RES} из ${C_LGn}$cnt_users${RES}"
+  echo "Блоков добыто:${C_LGn}$cnt_blocks_mined${RES}"
+  echo "Последний добытый блок:${C_LGn}$last_block_mined${RES}"
+  echo "Счет/Калибрационный счет:${C_LGn}$score${RES} / ${C_LGn}$calibration_score${RES}"
+  echo "Высота сети:${C_LGn}$block_heigh${RES}"
 }
 
 # Actions
