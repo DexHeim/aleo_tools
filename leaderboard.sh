@@ -51,7 +51,7 @@ leaderboard() {
   local calibration_score=$(echo $leaderboard_web | jq ".leaderboard[0].calibrationScore")
   local block_heigh=$(echo $leaderboard_web | jq ".blockHeight")
   
-  printf_n "
+  printf "
 Позиция в рейтинге:${C_LGn}${position}${RES} из ${C_LGn}${cnt_users}${RES}
 Блоков добыто:${C_LGn}${cnt_blocks_mined}${RES}
 Последний добытый блок:${C_LGn}${last_block_mined}${RES}
