@@ -52,16 +52,28 @@ leaderboard() {
   local block_heigh=$(echo $leaderboard_web | jq ".blockHeight")
   
   printf "
-Позиция в рейтинге:${C_LGn}${position}${RES} из ${C_LGn}${cnt_users}${RES}
-Блоков добыто:${C_LGn}${cnt_blocks_mined}${RES}
-Последний добытый блок:${C_LGn}${last_block_mined}${RES}
-Счет/Калибрационный счет:${C_LGn}${score}${RES} / ${C_LGn}${calibration_score}${RES}
-Высота сети:${C_LGn}${block_heigh}${RES}
+Позиция в рейтинге: ${C_LGn}${position}${RES} из ${C_LGn}${cnt_users}${RES}
+Блоков добыто: ${C_LGn}${cnt_blocks_mined}${RES}
+Последний добытый блок: ${C_LGn}${last_block_mined}${RES}
+Счет/Калибрационный счет: ${C_LGn}${score}${RES} / ${C_LGn}${calibration_score}${RES}
+Высота сети: ${C_LGn}${block_heigh}${RES}
 "
 }
 
-# Actions
+# Install packages
+I=`dpkg -s "jq" | grep "Status" `
+if not [ -n "$I" ]
+then
+  sudo apt install jq -y &>/dev/null
+fi
+I=`dpkg -s "curl" | grep "Status" `
+if not [ -n "$I" ]
+then
+  sudo apt install curl -y &>/dev/null
+fi
+
 #sudo apt install wget, jq, curl -y &>/dev/null
+# Actions
 . <(wget -qO- https://raw.githubusercontent.com/DexHeim/tools/main/logo.sh)
 cd
 $function
