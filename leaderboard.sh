@@ -51,12 +51,12 @@ leaderboard() {
 
 # Install packages
 I=`dpkg -s "jq" | grep "Status" `
-if [not] [ -n "$I" ]
+if [ -z "$I" ]
 then
   sudo apt install jq -y &>/dev/null
 fi
 I=`dpkg -s "curl" | grep "Status"`
-if [not] [ -n "$I" ]
+if [ -z "$I" ]
 then
   sudo apt install curl -y &>/dev/null
 fi
