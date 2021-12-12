@@ -17,23 +17,12 @@ while test $# -gt 0; do
 		echo
 		echo -e "${C_LGn}Options${RES}:"
 		echo -e "  -h, --help         show the help page"
-		echo -e "  -s, --source       install the node using a source code"
 		echo
 		echo -e "You can use either \"=\" or \" \" as an option and value ${C_LGn}delimiter${RES}"
 		echo
-		echo -e "${C_LGn}Useful URLs${RES}:"
-		echo -e "https://github.com/SecorD0/Massa/blob/main/multi_tool.sh - script URL"
-		echo -e "https://t.me/letskynode — node Community"
+		echo -e "https://t.me/DexHeim"
 		echo
 		return 0
-		;;
-	-op|--open-ports)
-		function="open_ports"
-		shift
-		;;
-	-s|--source)
-		function=""
-		shift
 		;;
 	*|--)
 		break
@@ -62,7 +51,7 @@ leaderboard() {
 
 # Install packages
 I=`dpkg -s "jq" | grep "Status" `
-if not [ -n "$I" ]
+if ![ -n "$I" ]
 then
   sudo apt install jq -y &>/dev/null
 fi
